@@ -1,0 +1,2 @@
+# FTR-wallet
+wallet 
