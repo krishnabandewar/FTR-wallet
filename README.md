@@ -38,9 +38,6 @@ Edit
    cd future-wallet
 Set up the backend:
 
-bash
-Copy
-Edit
 cd ftr-wallet-backend
 npm install
 node app.js
@@ -48,9 +45,6 @@ The backend server will start at http://localhost:5000.
 
 Set up the frontend:
 
-bash
-Copy
-Edit
 cd ../ftr-wallet-frontend
 npm install
 npm start
