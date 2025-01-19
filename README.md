@@ -1,57 +1,81 @@
-# Future Blockchain Wallet
+# Future Wallet (FTR) Blockchain Wallet
 
-A simple blockchain wallet for generating addresses, managing private keys, checking balances, and generating QR codes.
+A blockchain wallet application for generating, importing, and managing Bitcoin wallets. This project demonstrates the integration of React.js for the frontend and Node.js for the backend using the BitcoinJS library.
 
 ## Features
-- Generate new wallet addresses and private keys.
-- Import existing wallets using private keys.
-- Check wallet balances.
-- Generate QR codes for easy sharing.
+- Generate a Bitcoin wallet (address and private key).
+- Import an existing wallet using a private key.
+- Check the balance of a wallet.
+- Generate QR codes for wallet addresses.
 
-## Technologies Used
-- **Frontend**: React.js, Axios, TailwindCSS
-- **Backend**: Node.js, Express, bitcoinjs-lib
+## Tech Stack
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Libraries**: 
+  - `bitcoinjs-lib` for wallet generation and validation.
+  - `axios` for API communication between the frontend and backend.
+  - `qrcode` for generating QR codes.
+  - `body-parser` for handling JSON requests.
 
-## Installation
+## Project Structure
+future-wallet/ │ ├── ftr-wallet-backend/ # Backend server │ ├── app.js # Main server file │ ├── package.json # Backend dependencies │ └── node_modules/ # Installed backend modules │ ├── ftr-wallet-frontend/ # Frontend application │ ├── src/ # React source code │ │ ├── App.js # Main React component │ │ ├── components/ # Custom React components │ │ │ ├── WalletGenerator.js │ │ │ ├── WalletImporter.js │ │ │ ├── BalanceChecker.js │ │ │ └── QRCodeGenerator.js │ │ └── index.js # React entry point │ ├── package.json # Frontend dependencies │ └── node_modules/ # Installed frontend modules │ ├── README.md # Project documentation └── .gitignore # Git ignored files
 
-### Backend Setup
-1. Navigate to the backend directory:
+markdown
+Copy
+Edit
+
+## Installation and Setup
+
+### Prerequisites
+- Node.js and npm installed.
+- Basic knowledge of React.js and Node.js.
+
+### Steps to Run
+
+1. Clone the repository:
    ```bash
-   cd ftr-wallet-backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the server:
-   ```bash
-   node app.js
-   ```
-   Backend will run on `http://localhost:5000`.
+   git clone <repository_url>
+   cd future-wallet
+Set up the backend:
 
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd ftr-wallet-frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the React app:
-   ```bash
-   npm start
-   ```
-   Frontend will run on `http://localhost:3000`.
+bash
+Copy
+Edit
+cd ftr-wallet-backend
+npm install
+node app.js
+The backend server will start at http://localhost:5000.
 
-## Usage
-1. Open the frontend in your browser.
-2. Generate a wallet or import an existing one.
-3. Check wallet balance or generate QR codes for transactions.
+Set up the frontend:
 
-## Notes
-- Ensure the backend server is running before using the frontend.
-- Both frontend and backend should run simultaneously for proper functionality.
+bash
+Copy
+Edit
+cd ../ftr-wallet-frontend
+npm install
+npm start
+The frontend will open in your browser at http://localhost:3000.
 
----
+API Endpoints
+POST /wallet/generate: Generates a new Bitcoin wallet.
+POST /wallet/import: Imports a wallet using a private key.
+GET /wallet/balance/:address: Retrieves the balance for the specified Bitcoin address.
+POST /wallet/qr: Generates a QR code for a given address.
+Known Issues
+The balance checker does not fetch live balances due to incomplete backend functionality.
+Ensure all required npm packages are installed before running the project.
+Future Improvements
+Integrate a blockchain API for live balance retrieval.
+Enhance error handling and form validation in both frontend and backend.
+Add unit tests for React components and Express routes.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Note: If you face issues or have questions, feel free to raise them in the repository.
+This concise version includes all the key information in a readable format! Let me know if you’d like more tweaks!
+
+
+
+
+
 
